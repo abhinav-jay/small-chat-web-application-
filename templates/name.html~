@@ -1,0 +1,6 @@
+<!doctype html>
+<body>
+<h1> Please fill in your name <h1>
+    <div>
+      <input type="text" id="pere" name="pere" placeholder = "name"/>
+	<button type="submit">Send</button>

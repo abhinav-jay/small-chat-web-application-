@@ -1,0 +1,8 @@
+<html>
+ <body>
+  <h1> List of items to buy <h1>
+      <p>{{ls}}<p>
+	<a href = "index.html">add item</a>
+    </h1>
+ </body>
+</html>

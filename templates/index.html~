@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>the family messaging website</title>
+    <style>
+      h2 {
+	  text-align: center;
+      }
+      * {
+	  font-size: 110%;
+      }
+      
+     button {
+	  border-radius: 24px;
+	  background-color: green;
+      }
+      input[type=text] {
+	  background-color: black;
+	  border-radius: 24px;
+	  border: 1px solid white;
+	  color: white;
+      }
+      form {
+	  position: fixed;
+	  bottom: 0;
+	  margin-bottom: 2%;
+	  align-self: center;
+	  width: 100%;
+	  height: 2%;
+	  margin-left: 1%;
+      }
+      html {
+	  height: 100%;
+	  max-height: auto;
+	  width: 100%;
+	  background-color: #242424;
+      }
+
+      body {
+	  height: 100%;
+	  min-width: 100%;
+	  position: relative;
+      }
+      .message {
+	  width: 100%;
+	  margin: 2%;
+	  border-radius: 24px;
+	  padding: 10px;
+	  color: white;
+	  background-color: black;
+      }
+      h1 {
+          margin-right: 10px;
+	  text-align: center;
+	  align-self: center;
+	  background-color: greenyellow;
+	  margin-top: 0;
+	  padding: 10px;
+	  border-radius: 24px;
+      }
+      .container {
+	  width: 50%;
+	  float: left;
+	  height: 100%;
+      }
+      .bc {
+	  width: 100%;
+	  overflow: auto;
+    </style>
+  </head>
+  <body>
+    <div class="container" style="float: right; margin-right: 0; padding:100px; width: 30%;">
+      <div style="position:fixed;">
+      <h1>family messaging group</h1>
+      <h1 style="height: 200px; width: 200px; border-radius: 50%; font-size: 150px; text-align: center; margin: 15%;">🏠</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div style="padding-bottom: 5%; width: 100%;">
+    {% for i in range(-50, 0, 1) %}
+    <div class="message">
+      <h2>{{user_input}}<h2>
+      <p>{{ls[i]}}</p>
+    </div>
+    {% endfor %}
+      </div>
+      <form action="{{ url_for("hello")}}" method="POST">
+	<input type="text" id="firstname" name="firstname" placeholder = "message" style="width:70%; border-radius: 24px; padding: 10px" autofocus/>
+	<button onClick="window.location.reload();" type="submit" style="width:8%; border-radius: 24px; padding: 10px;">Send</button>
+      </form>
+    </div>
+
+  </body>
+  <script>
+    function scrollBottom() {window.scrollTo(0, 99999);}
+    if (document.addEventListener) document.addEventListener("DOMContentLoaded", scrollBottom, false)
+    else if (window.attachEvent) window.attachEvent("onload", scrollBottom);
+  </script>
+</html>
